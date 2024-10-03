@@ -1,4 +1,4 @@
-import { Fields, Entity, BackendMethod, isBackend } from "remult";
+import { Fields, Entity, BackendMethod, isBackend, remult } from "remult";
 import type { deleteInS3, base64ToS3, getFromS3 } from "./server";
 
 @Entity<Media>("media", {
@@ -27,6 +27,12 @@ export class Media {
   fileName!: string;
   @Fields.string()
   fileType!: string;
+  // @Fields.string<Media>({
+  //   saving: (e) => {
+  //     e.userId = remult.user?.id;
+  //   },
+  // })
+  // userId?: string;
 
   @Fields.string<Media>({
     serverExpression: () => "",
@@ -81,3 +87,10 @@ export class MediaWithUrl extends Media {
 
 import { default as MediaUpload } from "./ui/MediaUpload.svelte";
 export { MediaUpload };
+
+// // //
+
+@Entity<AppMedia>("AppMedia", {
+  allowApiCrud: false,
+})
+export class AppMedia extends Media {}

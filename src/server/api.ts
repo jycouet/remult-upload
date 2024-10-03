@@ -8,7 +8,8 @@ export const api = remultSveltekit({
   admin: true,
   // from remult?
   // modules: [media],
-  entities: [Task, ...media.entities],
+
+  entities: [...media.entities, Task],
   initApi: async () => {
     media.initApi();
   },
@@ -16,6 +17,8 @@ export const api = remultSveltekit({
 
 // From remult?
 export type Module = {
+  /** @default 0 */
+  priority: number;
   entities: ClassType<unknown>[];
   initApi: () => void;
 };

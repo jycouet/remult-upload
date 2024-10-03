@@ -33,6 +33,12 @@ const getClient = () => {
 export async function base64ToS3(key: string, data: string) {
   const s3Client = getClient();
 
+  // new FileStorage(adapter);
+  // ...
+  // If local....
+
+  // If S3 do that...
+
   let split = data.split(",");
   let type = split[0].substring(5).replace(";base64", "");
   const buffer = Buffer.from(split[1], "base64");
