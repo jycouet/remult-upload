@@ -11,7 +11,7 @@ export const api = remultSveltekit({
 
   entities: [...media.entities, Task],
   initApi: async () => {
-    media.initApi();
+    media.initApi?.();
   },
 });
 
@@ -19,6 +19,8 @@ export const api = remultSveltekit({
 export type Module = {
   /** @default 0 */
   priority: number;
+  key: string;
+  caption: string;
   entities: ClassType<unknown>[];
   initApi: () => void;
 };

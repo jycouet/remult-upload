@@ -86,6 +86,9 @@ export const deleteInS3 = async (key: string) => {
 };
 
 export const media: Module = {
+  priority: 0,
+  key: "media",
+  caption: "Media",
   entities: [Media, MediaWithUrl],
   initApi: () => {
     Media.abstractBase64ToS3 = base64ToS3;

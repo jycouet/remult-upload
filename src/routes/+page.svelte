@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { MediaWithUrl, MediaUpload } from "$modules/media";
+  import { MediaWithUrl } from "$modules/media";
+  import { MediaUpload } from "$modules/media/svelte";
   import { repo } from "remult";
 
   import { browser } from "$app/environment";

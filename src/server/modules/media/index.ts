@@ -85,9 +85,6 @@ export class MediaWithUrl extends Media {
   url!: string;
 }
 
-import { default as MediaUpload } from "./ui/MediaUpload.svelte";
-export { MediaUpload };
-
 // // //
 
 @Entity<AppMedia>("AppMedia", {
